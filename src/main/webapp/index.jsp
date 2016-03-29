@@ -34,6 +34,9 @@
                 return xmlHttp;
             }
 
+
+
+
             document.querySelector("#username").onchange = function(){
                 //1. 获取xmlHttpRequest对象
                 var xmlHttp = createXmlHttp();
