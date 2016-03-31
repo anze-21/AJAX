@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<students>
+    <!--这是XML的注释-->
+    <student id="109">
+        <name>tom</name>
+        <age>23</age>
+        <score>88</score>
+        <message><![CDATA[<h1>Hello,Message</h1>]]></message>
+    </student>
+
+    <student id="110">
+        <name>jack</name>
+        <age>22</age>
+        <score></score>
+    </student>
+
+</students>

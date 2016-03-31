@@ -17,7 +17,6 @@
     <h1>Hello,Maven</h1>
     <input type="text" id="username"><span class="error hide" id="helpText">该账号已被占用</span>
 
-
     <script>
 
         (function(){
