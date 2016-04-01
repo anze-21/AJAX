@@ -23,6 +23,15 @@
         </form>
         <div id="rss">
         </div>
+        <hr>
+        <h3>有道词典</h3>
+        <form class="form-inline">
+            <input type="text" id="word">
+            <button type="button" class="btn" id="youdaoBtn"><i class="fa fa-search"></i> 查询</button>
+        </form>
+        <div id="result"></div>
+
+
     </div>
 
 <script src="http://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
@@ -30,8 +39,12 @@
     $(function(){
 
         $("#btn").click(function(){
-            $.get("/home.do",{"msg":'tom'},function(msg){
-                alert(msg);
+            $.get("/homes.do",{"msg":'tom'}).done(function(data){
+                alert(data);
+            }).fail(function(){
+                alert("请求错误");
+            }).always(function(){
+                console.log("always method");
             });
         });
 
@@ -47,7 +60,6 @@
             });
 
         });
-
 
         $("#btnRss").click(function(){
             var url = $("#url").val();
@@ -84,6 +96,24 @@
 
         });
 
+        $("#youdaoBtn").click(function(){
+            var word = $("#word").val();
+
+            $.getJSON("/youdao.do",{"doctype":"json","word":word})
+                    .done(function(json){
+                        var $result = $("#result");
+                        $result.html("");
+
+                        var result = json.basic.explains;
+                        for(var i = 0;i < result.length;i++) {
+                            $result.append("<p>"+result[i]+"</p>");
+                        }
+                    })
+                    .fail(function(){
+                        alert("请求服务器错误");
+                    });
+
+        });
 
     });
 </script>

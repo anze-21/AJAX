@@ -38,7 +38,7 @@
                 var dict = document.querySelector("#dict").value;
 
                 var xmlHttp = createXmlHttp();
-                xmlHttp.open("get","/youdao.do?word="+encodeURIComponent(dict),true);
+                xmlHttp.open("get","/youdao.do?doctype=xml&word="+encodeURIComponent(dict),true);
                 xmlHttp.onreadystatechange = function(){
                     if(xmlHttp.readyState == 4) {
                         if(xmlHttp.status == 200) {
