@@ -18,6 +18,11 @@ public class HomeServlet extends HttpServlet {
         msg = new String(msg.getBytes("ISO8859-1"),"UTF-8");
 
         System.out.println("Hi,Maven Web App! " + msg);
+
+        PrintWriter out = resp.getWriter();
+        out.print("Hello,jQuery!");
+        out.close();
+
     }
 
     @Override
