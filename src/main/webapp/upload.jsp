@@ -31,15 +31,36 @@
             swf:"/staic/js/webuploder/Uploader.swf",
             server:"/upload.do",
             pick:"#picker",
-            fileVal:"file"
+            fileVal:"file",
+            //auto:true,
+            // 只允许选择图片文件。
+            accept: {
+                title: 'Images',
+                extensions: 'gif,jpg,jpeg,bmp,png',
+                mimeTypes: 'image/*'
+            }
         });
 
         //文件放入到上传队列中调用
         uploader.on("fileQueued",function(file){
             console.log("fileQueued start...");
-            var html = "<li id='"+file.id+"'>"+file.name+"</li>";
-            $(".fileList").append(html);
+            var $li = $("<li id='"+file.id+"'>"+file.name+"</li>");
+
             console.log("fileQueued end...");
+
+            //图片预览
+            uploader.makeThumb(file,function(error,src){
+                if(!error) {
+                    var $img = $("<img>");
+                    $img.attr("src",src);
+                    $li.append($img);
+                }
+            },100,100);
+
+
+            $(".fileList").append($li);
+
+
         });
 
         //文件上传过程中调用

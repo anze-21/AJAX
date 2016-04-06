@@ -10,3 +10,6 @@
 + [静态资源CDN cdnjs](https://cdnjs.com/)
 + [静态资源CDN bootcdn](http://www.bootcdn.cn/)
 + [Font-Awesome](http://fortawesome.github.io/Font-Awesome)
++ [WebUploader] (http://fex.baidu.com/webuploader/)
++ [Simditor] (http://simditor.tower.im/)
++ [七牛云存储] (http://www.qiniu.com)
