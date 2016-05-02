@@ -1,5 +1,6 @@
 ##Ajax教学代码
 
+
 ###相关链接：
 
 + [MarkDown语法](http://wowubuntu.com/markdown)
